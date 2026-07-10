@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Teaching-FCI-AO
+# FCI-AO Code Example
 # Author: Peng Bao <baopeng@iccas.ac.cn>
 
 import numpy
@@ -15,7 +15,7 @@ cisolver = fci.FCI(mol, mf.mo_coeff)
 print('E(FCI) = %.12f' % (cisolver.kernel()[0]))
 ######################################################
 
-#################### Teaching-FCI-AO ####################
+#################### FCI-AO Code Example ####################
 def select(psi_i, psi_j):
   mask = numpy.isin(psi_i, psi_j, invert=True)
   x0a = numpy.argwhere(mask == True)

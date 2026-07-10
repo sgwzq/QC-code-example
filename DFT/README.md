@@ -1,0 +1,4 @@
+dft.py: A simple DFT code for small system using LDA exchange and VWN correlation functionals. 
+lda.py: A simple DFT code for small system using only LDA exchange functionals.
+Need PySCF installed. 
+Ref books: you can find good books according to the reviews on the Internet.

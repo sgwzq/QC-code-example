@@ -1,0 +1,3 @@
+A simple MP2 code for small system. Need PySCF installed. 
+Refs: some books such as Szabo, A. and Ostlund, N.S. (1996) Modern Quantum Chemistry.
+Run:       python3 mp2.py

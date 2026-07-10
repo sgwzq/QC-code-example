@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Teaching-HF-DIIS
+# HF-DIIS Code Example
 # Author: Peng Bao <baopeng@iccas.ac.cn>
 
 import numpy
@@ -25,7 +25,7 @@ mf.kernel()
 print('Reference HF total energy =', mf.e_tot)
 #####################################################
 
-#################### Teaching-HF-DIIS ####################
+#################### HF-DIIS Code Example ####################
 # RHF. Only need structure information of molecule and electronic integrals 
   
 #mol = gto.M(atom='H 0 0 0; F 0 0 1.1', basis='cc-pvdz')
@@ -150,5 +150,5 @@ while not scf_conv and cycle < 50:
 
     cycle += 1
 
-print('Teaching-HF total energy =', e_tot, 'Cycle number=', cycle)
+print('HF Code Example total energy =', e_tot, 'Cycle number=', cycle)
 

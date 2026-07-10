@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Teaching-DFT
+# DFT Code Example
 # Author: Peng Bao <baopeng@iccas.ac.cn>
 
 import numpy
@@ -9,12 +9,12 @@ from pyscf import gto, scf, dft
 ############### DFT in PySCF to compare ##############
 mol = gto.M(atom='H 0 0 0; F 0 0 1.1', basis='cc-pvdz')
 mf = dft.RKS(mol)
-mf.xc = 'lda'
+mf.xc = 'lda, vwn'
 mf.kernel()
 print('Reference DFT total energy =', mf.e_tot)
 #####################################################
 
-#################### Teaching-DFT ####################
+#################### DFT Code Example ####################
 # RHF. Only need structure information of molecule and electronic integrals 
   
 mol = gto.M(atom='H 0 0 0; F 0 0 1.1', basis='cc-pvdz')
@@ -23,14 +23,12 @@ mol = gto.M(atom='H 0 0 0; F 0 0 1.1', basis='cc-pvdz')
 grids = dft.gen_grid.Grids(mol)
 grids.build()
 ao = dft.numint.eval_ao(mol, grids.coords)
-Cx = -3/4*(3/4/numpy.pi)**(1/3)
 
 def get_xc(dm, ao, grids):
     rho = 2 * numpy.einsum('pu, uv, pv->p', ao, dm, ao)
-    exc = 2*Cx * (rho/2)**(1/3) 
+    exc, vxc = dft.numint.NumInt().eval_xc('lda, vwn', rho)[:2]
     en_xc = (rho * grids.weights)@exc
-    vxc1 = 4/3*exc
-    v_xc = numpy.einsum('pu,pv,p->uv', ao, ao, grids.weights*vxc1)
+    v_xc = numpy.einsum('pu,pv,p->uv', ao, ao, grids.weights*vxc[0])
     return en_xc, v_xc
 ###########
 
@@ -128,4 +126,4 @@ while not scf_conv and cycle < 50:
 
     cycle += 1
 
-print('Teaching-DFT total energy =', e_tot, 'Cycle number=', cycle)
+print('DFT Code Example total energy =', e_tot, 'Cycle number=', cycle)

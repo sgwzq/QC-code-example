@@ -1,5 +1,19 @@
-Teaching-Codes for Quantum Chemistry. 
-The studying order is HF -> DIIS -> MP2 -> FCI and HF -> DFT.
-Please see more information in every directory.
-There is almost no comments in the codes because students should put them before each line according to the content of class or some books 
-such as Szabo, A. and Ostlund, N.S. (1996) Modern Quantum Chemistry.
+# Code Examples for Quantum Chemistry. 
+
+## About Computational Quantum Chemistry
+The quickest way to get started with Computational Quantum Chemistry (based on Hartree-Fock) should be   
+* Hartree-Fock -> some add-ons like DIIS -> Configuration Interaction Methods like CIS -> some add-ons like spin-adaptation -> FCI
+* Hartree-Fock -> Coupled Cluster
+* Hartree-Fock -> MP2
+* Hartree-Fock -> Density Functional Theory -> Double-Hybrid Functionals
+
+Many Textbooks have detailed introduction about these methods, here is a brief list:  
+* Szabo, A. and Ostlund, N.S. (1996) Modern Quantum Chemistry.
+* Levine (2012) Quantum Chemistry 7th edition.
+* (For Chinese Learners) 徐光宪 and 黎乐民 and 王德民 (1980) 量子化学 ——基本原理和从头计算法
+
+## About this repo
+This repo is a python code demonstrating the process of some basic H-F based QM methods.  
+All of these codes are written in Python with PySCF Module. It may require python and pyscf installed before running these scripts.
+
+Welcome to test, issue, polish, and make it better.

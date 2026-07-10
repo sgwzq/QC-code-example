@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Teaching-MP2
+# MP2 Code Example
 # Author: Peng Bao <baopeng@iccas.ac.cn>
 
 import numpy
@@ -15,7 +15,7 @@ mp2 = mp.RMP2(mf)
 mp2.kernel()
 ######################################################
 
-#################### Teaching-MP2 ####################
+#################### MP2 Code Example ####################
 mo=mf.mo_coeff
 orben=mf.mo_energy
 
